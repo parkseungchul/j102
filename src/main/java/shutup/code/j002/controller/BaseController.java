@@ -20,7 +20,7 @@ public class BaseController {
 		try { 
 			local = InetAddress.getLocalHost(); 
 			String ip = local.getHostAddress(); 
-			log.debug("Call IP: " + ip);
+			log.debug("Call IP[한글 테스트]: " + ip);
 			} catch (UnknownHostException e1) { 
 				e1.printStackTrace(); 
 		}
