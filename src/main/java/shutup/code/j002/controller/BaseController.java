@@ -8,25 +8,22 @@ import java.util.Date;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class BaseController {
 	
 	@RequestMapping("/")
-	public String main() {
-		
+	public String index() {
 		InetAddress local; 
-		SimpleDateFormat format2 = new SimpleDateFormat ( "yyyy년 MM월dd일 HH시mm분ss초");
-		Date time = new Date();
-		String time2 = format2.format(time);
-
 		try { 
 			local = InetAddress.getLocalHost(); 
 			String ip = local.getHostAddress(); 
-			System.out.println("Call Time: " + time2 + ", " + "Call IP: " + ip); 
+			log.debug("Call IP: " + ip);
 			} catch (UnknownHostException e1) { 
 				e1.printStackTrace(); 
 		}
 		return "index";
 	}
-
 }
